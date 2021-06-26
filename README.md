@@ -8,3 +8,5 @@ Cambio desde el visual studio code
 Cambio del viernes 25 de juni del 2021 solo contra el mundo
 
 Cambio del viernes 25 de junio del 2021 en visual studio code solo contra el mundo vas
+
+Cambio desde visual studio 26 de junio 8:44hrs
