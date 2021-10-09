@@ -1,5 +1,7 @@
 
 Paso 1 clonar el git
+git clone https://github.com/adafruit/Adafruit_Python_DHT.git
+
 
 Paso 2 cambiar a carrera adafruit
 cd Adafruit_Python_DHT/
