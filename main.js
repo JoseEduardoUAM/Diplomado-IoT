@@ -1,26 +1,30 @@
-let arregloPreguntas = [
-    'Escribe tu nombre completo: ','Escribe tu Edad: ','Escribe tu numero de matricula: ','Escribe tu unidad academica: '
-];
+﻿var mysql = require('mysql');
 
-process.stdin.resume();
-process.stdin.setEncoding('utf8');
+var connection = mysql.createConnection({
+  host     : '192.168.1.67',
+  user     : 'JoseEduardo',
+  password : 'eduardo112233',
+  database : 'mydb'
+});
+ 
+connection.connect();
 
-let datos = {};
+const {promisify} = require('util');
 
-function obtenerDatos( indice , colback ){
-    colback( indice );
+connection.query = promisify( connection.query );
+
+async function Consulta(){
+	try{
+	  let res = await connection.query('SELECT * from escuela');
+	  if( res.length > 0 ){
+		console.log( res[0] );
+	  }else{
+		console.log("No hay nada bro");
+	  }
+	  connection.end();
+	}catch(error){
+		console.log( error );
+	}
 }
 
-obtenerDatos( 1 , function(indice) {
-    process.stdout.write( arregloPreguntas[0] );
-    process.stdin.on('data', function (data) {
-        datos[ arregloPreguntas[indice-1] ] = data;
-        if( indice < arregloPreguntas.length ){
-            process.stdout.write( arregloPreguntas[indice] );
-            indice++;
-        }else{
-            console.log( datos );
-            process.exit();
-        }
-    })
-})
+Consulta();
