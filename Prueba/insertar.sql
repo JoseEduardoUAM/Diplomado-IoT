@@ -1,0 +1,2 @@
+INSERT INTO mydb.Escuela (idEscuela,nombre,direccion,telefono) VALUE (1,"Jose Eduardo","centro",5556892345);
+INSERT INTO mydb.Escuela (idEscuela,nombre,direccion,telefono) VALUE (2,"Dulce Macias","gam",5523154);
