@@ -25,6 +25,7 @@ let dato = async () => {
 let insertar = async () => {
     try{
       let conecction = await conecta.getConnection();
+        // SELECT * FROM Escuela
         const filas = await conecction.query("INSERT INTO Escuela (idEscuela,nombre,direccion,telefono) VALUE (3,'genaro','Azcapotzalco',5523561547)" )
         console.log( filas[0] );
         conecction.release();
